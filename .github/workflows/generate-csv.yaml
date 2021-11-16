@@ -2,7 +2,7 @@ name: Generate CSV
 on:
   workflow_dispatch
 jobs:
-  Explore-GitHub-Actions:
+  Generate:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
