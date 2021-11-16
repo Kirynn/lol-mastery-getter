@@ -3,10 +3,10 @@ import requests
 import csv
 import time
 import json
+import argparse
 
-API_KEY = ""
-REGION = 'na1'
-BASE_URL = f'https://{REGION}.api.riotgames.com'
+API_KEY = ''
+BASE_URL = ''
 
 def getNames(file : str) -> List[str]:
 
@@ -53,6 +53,19 @@ def getChampionNames() -> List[Tuple[int, str]]:
         return data
 
 if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser(description="Generate masteries for some people")
+    parser.add_argument('region', type=str,
+                    help='The region to gather the data from.')
+    parser.add_argument('key', type=str,
+                    help='The Riot API key to use.')
+
+    parser.parse_args()
+
+    REGION = parser.region
+    API_KEY = parser.key
+
+    BASE_URL = f'https://{REGION}.api.riotgames.com'
 
     names_with_scores = {}
     championNames = getChampionNames()
