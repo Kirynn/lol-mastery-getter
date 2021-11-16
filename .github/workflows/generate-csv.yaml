@@ -17,4 +17,4 @@ jobs:
           requirements: generator/requirements.txt
       - name: run python
         run : |
-          python generator/masteries.py ${{ env.REGION }} ${{ env.RIOT_API_KEY }}
+          python generator/masteries.py ${{ secrets.REGION }} ${{ secrets.RIOT_API_KEY }}
