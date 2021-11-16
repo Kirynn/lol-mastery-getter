@@ -19,3 +19,8 @@ jobs:
         run : |
           cd generator
           python masteries.py ${{ secrets.REGION }} ${{ secrets.RIOT_API_KEY }}
+      - name: Save Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: Masteries.csv
+          path: generator/output.csv
