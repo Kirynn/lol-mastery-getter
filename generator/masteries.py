@@ -60,10 +60,10 @@ if __name__ == '__main__':
     parser.add_argument('key', type=str,
                     help='The Riot API key to use.')
 
-    parser.parse_args()
+    args = parser.parse_args()
 
-    REGION = parser.region
-    API_KEY = parser.key
+    REGION = args.region
+    API_KEY = args.key
 
     BASE_URL = f'https://{REGION}.api.riotgames.com'
 
