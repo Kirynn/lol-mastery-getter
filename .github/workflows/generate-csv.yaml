@@ -13,8 +13,6 @@ jobs:
         with:
           python-version: 3.9
           requirements: generator/requirements.txt
-      - name: install requests
-        
       - name: run python
         run : |
           python generator/masteries.py ${{ env.REGION }} ${{ env.RIOT_API_KEY }}
