@@ -18,5 +18,4 @@ jobs:
       - name: run python
         run : |
           cd generator
-          echo ${{ secrets.NAMES }} > names.txt
           python masteries.py ${{ secrets.REGION }} ${{ secrets.RIOT_API_KEY }}
